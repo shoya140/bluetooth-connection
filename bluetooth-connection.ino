@@ -99,7 +99,7 @@ void loop()
 void toward(int distance) {
   digitalWrite(3, LOW);
   digitalWrite(4, HIGH);
-  digitalWrite(5, HIGH);
+  digitalWrite(5, LOW);
   digitalWrite(6, HIGH);
   delay(distance);
   stopWheel(false);
@@ -108,7 +108,7 @@ void toward(int distance) {
 void backward(int distance) {
   digitalWrite(3, HIGH);
   digitalWrite(4, LOW);
-  digitalWrite(5, HIGH);
+  digitalWrite(5, LOW);
   digitalWrite(6, HIGH);
   delay(distance);
   stopWheel(false);
@@ -121,9 +121,9 @@ void turn90(bool reverse) {
     digitalWrite(5, HIGH);
     digitalWrite(6, HIGH);
   } else {
-    digitalWrite(3, HIGH);
+    digitalWrite(3, LOW);
     digitalWrite(4, HIGH);
-    digitalWrite(5, LOW);
+    digitalWrite(5, HIGH);
     digitalWrite(6, HIGH);
   }
   delay(500);
@@ -132,14 +132,14 @@ void turn90(bool reverse) {
 
 void turn180(bool reverse) {
   if (reverse) {
-    digitalWrite(3, LOW);
+    digitalWrite(3, HIGH);
     digitalWrite(4, HIGH);
     digitalWrite(5, LOW);
     digitalWrite(6, HIGH);
   } else {
     digitalWrite(3, HIGH);
     digitalWrite(4, LOW);
-    digitalWrite(5, LOW);
+    digitalWrite(5, HIGH);
     digitalWrite(6, HIGH);
   }
   delay(1000);
